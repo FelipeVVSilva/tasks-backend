@@ -7,7 +7,9 @@ pipeline{
             }
         }
         stage ('Unit Tests'){
-            bat 'mvn test'
+            steps{
+                bat 'mvn test'
+            }
         }
     }
 }
