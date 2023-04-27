@@ -21,5 +21,13 @@ pipeline{
                 }
             }
         }
+        stage ('Quality Gate'){
+            steps{
+                sleep(5)
+                temiout(time: 1, unit: 'MINUTES'){
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
     }
 }
